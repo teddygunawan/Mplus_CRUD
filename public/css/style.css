@@ -1,0 +1,42 @@
+#content {
+    background-color: #4c4c4c !important;
+    color:white;
+}
+
+.book-thumbnail {
+    max-height: 50vh;
+}
+
+.book-description{
+    color: #C6CACD;
+}
+
+.outside-card{  
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #212121!important;
+}
+
+.modal-content{
+    background-color: #2D3134;
+}
+
+.form-style {
+    background-color: #2D3134;
+    color: #C6CACD;
+    font-family: "Oswald-Regular";
+}
+
+.form-control {
+    background-color: #b2b2b2;
+    color: black;
+}
+
+.form-control:focus {
+    background-color: #b2b2b2;
+    color: black;
+}
+
+.hide-element{
+    display: none;
+}
+
