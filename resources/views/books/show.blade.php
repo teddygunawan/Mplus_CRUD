@@ -16,8 +16,11 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 text-right">
-                                <a href="/books/{{$book->id}}/edit">
-                                    <i class="fa fa-pencil fa-lg text-white" aria-hidden="true"></i>
+                                <a href="/books/{{$book->id}}/edit" class="border-right mr-1">
+                                    <i class="fa fa-pencil fa-lg text-success" aria-hidden="true"></i>
+                                </a>
+                                <a href="/books/{{$book->id}}" id="delete-book">
+                                    <i class="fa fa-trash-o fa-lg text-danger" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -26,7 +29,7 @@
                         </h4>
                         <p class="book-description">
                             {{$book->type}}, Published in
-                            @isset($book->date_published) {{ $book->date_published or 'hah' }} @endisset
+                            @isset($book->date_published) {{ $book->date_published }} @endisset
                             @empty($book->date_published) - @endisset
                         </p>
                         <hr style="border-color:white" />
@@ -41,7 +44,7 @@
                             cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
                         </p>
                         @isset($book->pages)
-                            <p class="card-text"><small class="text-muted">{{$book->pages}} Pages Long</small></p>
+                        <p class="card-text"><small class="text-muted">{{$book->pages}} Pages Long</small></p>
                         @endisset
                     </div>
                 </div>
@@ -51,10 +54,23 @@
 </div>
 
 
+<div class="modal fade" tabindex="-1" role="dialog" id="confirmation-modal" style="background-color:black;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                <h5 class="modal-title text-danger">Are You Sure?</h5>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button id="delete" type="button" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 @endsection
 
 @section('js-file')
-<script src="{{URL::asset('js/book_create.js')}}"></script>
+<script src="{{URL::asset('js/book_show.js')}}"></script>
 @endsection

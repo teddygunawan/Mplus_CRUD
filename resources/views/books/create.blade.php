@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', "Add Books")
+@section('title', "Great Library")
 
 @section('content')
 <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 mx-auto mb-5">
@@ -83,19 +83,18 @@
     </div>
 </div>
 
-<div class="modal fade" tabindex="-1" role="dialog" id="success-modal" style="background-color:black">
-    <div class="modal-dialog" role="document">
+<div class="modal fade" tabindex="-1" role="dialog" id="success-modal" data-backdrop="static"
+    style="background-color:black;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-header text-center">
+            <div class="modal-header justify-content-center">
                 <h5 class="modal-title text-success">Book Sucessfully Added!</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
             </div>
-            <div class="modal-footer">
-                <button id="add-more-book" type="button" class="btn btn-primary info-color-dark">Add More Book</button>
-                <button id="view-book" type="button" class="btn btn-secondary" data-dismiss="modal">View Added
-                    Book</button>
+            <div class="modal-footer justify-content-center">
+                <button id="add-more-book" type="button" class="btn btn-primary">Add More Book</button>
+                <button id="view-book" type="button" class="btn btn-secondary">
+                    View Added Book
+                </button>
             </div>
         </div>
     </div>

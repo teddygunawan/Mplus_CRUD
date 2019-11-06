@@ -5,7 +5,6 @@ $(document).ready(function () {
         $("#errors").empty();
         $("#error-section").hide();
         let formData = new FormData(document.querySelector('form'));
-        console.log(formData.get('book_cover'));
         $.ajax({
             url: '/books',
             type: 'post',
@@ -30,6 +29,7 @@ $(document).ready(function () {
     $("#add-more-book").click((e) =>{
         $("#create-book").trigger("reset");
         $('#success-modal').modal('hide');
+        $('#uploaded-image').hide();
     });
     $("#view-book").click((e) =>{
         window.location.replace(`/books/${newBookId}`);
