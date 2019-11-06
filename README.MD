@@ -17,7 +17,7 @@ Make sure to place composer's system-wide vendor bin directory in your $PATH so 
 
 <h3>Setting up the M+ Software CRUD Web Applications</h3>
 <ul>
-  <li>First is to set up the environment, copy and paste **.env.example** in the root directory. Then rename the file to **.env**</li>
+  <li>First is to set up the environment, copy and paste ** .env.example ** in the root directory. Then rename the file to **.env**</li>
   <li>Open the **.env** using text editor, then change ** DB_* ** part of the file to fit your database information.</li>
   <li>Set up application key for security purpose using `php artisan key:generate`</li>
   <li>
