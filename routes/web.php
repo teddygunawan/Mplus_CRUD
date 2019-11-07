@@ -19,10 +19,13 @@ Route::fallback(function () {
     return redirect()->route('books');
 });
 
+
+
 Route::get('books', 'BookController@index')->name('books');
 Route::get('books/create', 'BookController@create');
 Route::get('books/{book}', 'BookController@show');
 Route::get('books/{book}/edit', 'BookController@edit');
+
 Route::post('books', 'BookController@store');
 Route::put('books/{book}', 'BookController@update');
 Route::delete('books/{book}', 'BookController@delete');

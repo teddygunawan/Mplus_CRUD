@@ -53,7 +53,7 @@
     </div>
 </div>
 
-
+<!-- Confirmation modal for when user try to delete the book, hidden by default and shall be triggered when they try to delete the book -->
 <div class="modal fade" tabindex="-1" role="dialog" id="confirmation-modal" style="background-color:black;">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">

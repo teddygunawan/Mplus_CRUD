@@ -83,6 +83,7 @@
     </div>
 </div>
 
+<!-- Modal to ask whether the user wants to add more book, or view the book they just added. Hidden by default -->
 <div class="modal fade" tabindex="-1" role="dialog" id="success-modal" data-backdrop="static"
     style="background-color:black;">
     <div class="modal-dialog modal-dialog-centered" role="document">

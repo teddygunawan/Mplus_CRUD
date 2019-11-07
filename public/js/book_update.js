@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    // Detect Changes in the file input, if the user uploaded an image, try to display that image as preview.
     $("#book-cover").change((e) =>{
         let reader = new FileReader();
         reader.onload = (e) =>{

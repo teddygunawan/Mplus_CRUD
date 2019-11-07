@@ -24,6 +24,12 @@ class BookController extends Controller
     {
         return view('books.edit', compact('book'));
     }
+
+    public function show(Book $book)
+    {
+        return view('books.show', compact('book'));
+    }
+
     public function store(Request $request)
     {
         #Request::flash();
@@ -37,7 +43,8 @@ class BookController extends Controller
         $book = new Book;
         $book->fill($request->all());
         $book->image_format = $image->getClientOriginalExtension();
-
+        
+        // Save the newly created book, then use the id of the book to save the uploaded image.
         if ($book->save()) {
             $name = strval($book->id) . '.' . $image->getClientOriginalExtension();
             $destinationPath = public_path('/images');
@@ -49,29 +56,27 @@ class BookController extends Controller
         }
     }
 
-    public function show(Book $book)
-    {
-        return view('books.show', compact('book'));
-    }
 
     public function update(Book $book, Request $request)
     {
-        error_log("updating stuff");
         $validatedField = $request->validate([
             'title' => 'required',
             'author' => 'required',
             'type' => 'required'
         ]);
         $book->fill($request->all());
+
+        // If the user uploaded new image. Replace the old image with the new one
         if($request->hasFile('book_cover')){
             $image = $request->file('book_cover');
             $book->image_format = $image->getClientOriginalExtension();
             $destinationPath = public_path('/images');
-            error_log($destinationPath . strval($book->id) . '.' . $image->getClientOriginalExtension());
             Storage::delete($destinationPath . strval($book->id) . '.' . $book->image_format);
             $name = strval($book->id) . '.' . $image->getClientOriginalExtension();
             $image->move($destinationPath, $name);
         }
+
+        
         if ($book->save()) {
             return redirect()->action(
                 'BookController@show', ['book' => $book->id]
